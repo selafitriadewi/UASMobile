@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "343065006291",
+    "firebase_url": "https://uasproject-29e82.firebaseio.com",
+    "project_id": "uasproject-29e82",
+    "storage_bucket": "uasproject-29e82.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:343065006291:android:7dded9e9c51a143a",
+        "android_client_info": {
+          "package_name": "com.mfr414.uasproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "343065006291-i0h9o7ofqg7692hos63g1jba35bt9gdd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mfr414.uasproject",
+            "certificate_hash": "9d1ffca4da5bc5ff027e3058101adcf22dc0358f"
+          }
+        },
+        {
+          "client_id": "343065006291-nbs7o12hnv1i5qrj6iol043c1aihd3ie.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3MOp2GIWLw2oGjlGxYpstqHWxU3333ew"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "343065006291-nbs7o12hnv1i5qrj6iol043c1aihd3ie.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
