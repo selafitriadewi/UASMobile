@@ -1,6 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardElevation="3dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/TVTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Title"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/TVDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TVTitle"
+            android:layout_marginTop="3dp"
+            android:hint="Desc"
+            android:textSize="15sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/TVStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TVDesc"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="4dp"
+            android:layout_alignRight="@+id/buttonEdit"
+            android:hint="Status"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/buttonDelete"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_alignRight="@+id/TVTitle"
+            android:text="Delete"
+            android:textSize="6sp"/>
+
+        <Button
+            android:id="@+id/buttonEdit"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_alignLeft="@+id/buttonDelete"
+            android:layout_marginLeft="-53dp"
+            android:text="Edit"
+            android:textSize="6sp" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
