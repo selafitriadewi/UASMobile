@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="100dp"
-        android:hint="Enter A New Job Title"/>
+        android:hint="Enter A New Task Title"/>
 
     <EditText
         android:id="@+id/editJobDesc"
@@ -25,17 +25,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editJobTitle"
         android:layout_marginTop="25dp"
-        android:hint="Enter A New Job Description"/>
-
-    <EditText
-        android:id="@+id/editjobDate"
-        android:inputType="datetime"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="25dp"
-        app:layout_constraintTop_toBottomOf="@+id/editJobDesc"/>
+        android:hint="Enter A New Task Description"/>
 
     <Button
         android:id="@+id/buttonAddJob"
@@ -44,11 +34,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="25dp"
-        app:layout_constraintTop_toBottomOf="@+id/editjobDate"
+        app:layout_constraintTop_toBottomOf="@+id/editJobDesc"
         android:text="Add Job"/>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonCancel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
