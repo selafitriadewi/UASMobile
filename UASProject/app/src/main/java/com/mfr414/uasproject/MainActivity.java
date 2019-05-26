@@ -8,6 +8,7 @@ import android.view.MenuItem;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.mfr414.uasproject.Activity.LoginActivity;
+import com.mfr414.uasproject.Activity.NewJobActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         fAuth=FirebaseAuth.getInstance();
         if(fAuth.getCurrentUser() == null){
+            finish();
             Intent login = new Intent(this, LoginActivity.class);
             startActivity(login);
         }
@@ -40,9 +42,15 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_logout) {
             logout();
             return true;
+        }if(id == R.id.action_AddNewJob){
+            addNewJob();
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void addNewJob() {
+        startActivity(new Intent(this, NewJobActivity.class));
     }
 
     private void logout() {
