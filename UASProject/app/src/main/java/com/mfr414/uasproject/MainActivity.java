@@ -1,16 +1,34 @@
 package com.mfr414.uasproject;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.mfr414.uasproject.Activity.LoginActivity;
 import com.mfr414.uasproject.Activity.NewJobActivity;
+import com.mfr414.uasproject.Adapter.RecyclerAdapter;
+import com.mfr414.uasproject.Model.Task;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter adapter;
+    private DatabaseReference DatabaseReff;
+    ArrayList<Task> ArrayTask;
+
 
     private FirebaseAuth fAuth;
     @Override
@@ -23,6 +41,27 @@ public class MainActivity extends AppCompatActivity {
             Intent login = new Intent(this, LoginActivity.class);
             startActivity(login);
         }
+        DatabaseReff = FirebaseDatabase.getInstance().getReference().child("task").child(fAuth.getCurrentUser().getUid());
+        recyclerView = findViewById(R.id.rv_task);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        ArrayTask = new ArrayList<Task>();
+
+        DatabaseReff.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for(DataSnapshot datafromfirebase : dataSnapshot.getChildren()){
+                    Task t = datafromfirebase.getValue(Task.class);
+                    ArrayTask.add(t);
+                }
+                adapter = new RecyclerAdapter(MainActivity.this,ArrayTask);
+                recyclerView.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(MainActivity.this,"Something Went Wrong,Please Try Again",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
