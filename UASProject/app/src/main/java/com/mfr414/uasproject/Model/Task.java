@@ -8,7 +8,7 @@ public class Task {
     public Task(String jobTitle, String jobDesc, String status) {
         this.jobTitle = jobTitle;
         this.jobDesc = jobDesc;
-        status = status;
+        this.status = status;
     }
 
     public Task() {
@@ -36,6 +36,6 @@ public class Task {
     }
 
     public void setStatus(String status) {
-        status = status;
+        this.status = status;
     }
 }

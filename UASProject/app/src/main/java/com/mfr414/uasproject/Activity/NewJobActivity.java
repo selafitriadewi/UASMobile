@@ -82,7 +82,6 @@ public class NewJobActivity extends AppCompatActivity {
         String taskStatus = "undone";
 
         Task task = new Task(taskTittle,taskDesc,taskStatus);
-        FirebaseUser user = fAuth.getCurrentUser();
 
         fDatabase.child(String.valueOf(maxId+1)).setValue(task);
         Toast.makeText(this,"tugas ditambahkan",Toast.LENGTH_SHORT).show();
