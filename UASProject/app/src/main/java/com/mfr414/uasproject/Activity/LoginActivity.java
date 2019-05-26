@@ -21,8 +21,8 @@ import com.mfr414.uasproject.R;
 public class LoginActivity extends AppCompatActivity {
 
     private Button btnLogin;
-    private EditText editTextEmail;
-    private EditText editTextPassword;
+    private EditText editTextEmailLogin;
+    private EditText editTextPasswordLogin;
     private TextView textRegister;
     private FirebaseAuth fAuth;
 
@@ -39,8 +39,8 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         btnLogin= findViewById(R.id.buttonLogin);
-        editTextEmail = findViewById(R.id.editEmailLogin);
-        editTextPassword = findViewById(R.id.editPasswordLogin);
+        editTextEmailLogin = findViewById(R.id.editEmailLogin);
+        editTextPasswordLogin = findViewById(R.id.editPasswordLogin);
         textRegister = findViewById(R.id.textViewRegister);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -60,8 +60,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void loginUser() {
-        String email = editTextEmail.getText().toString().trim();
-        String pass = editTextPassword.getText().toString().trim();
+        String email = editTextEmailLogin.getText().toString().trim();
+        String pass = editTextPasswordLogin.getText().toString().trim();
 
         if(email.isEmpty()){
             Toast.makeText(this,"Please insert your email",Toast.LENGTH_SHORT).show();

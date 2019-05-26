@@ -55,7 +55,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    private void registerUser() {
+    public void registerUser() {
         String email = editTextEmail.getText().toString().trim();
         String pass = editTextPassword.getText().toString().trim();
 
@@ -71,6 +71,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
+                    fAuth.signOut();
                     Intent login = new Intent(RegisterActivity.this, LoginActivity.class);
                     startActivity(login);
                 }else{
