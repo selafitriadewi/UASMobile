@@ -56,8 +56,8 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void registerUser() {
-        final String email = editTextEmail.getText().toString().trim();
-        final String pass = editTextPassword.getText().toString().trim();
+        String email = editTextEmail.getText().toString().trim();
+        String pass = editTextPassword.getText().toString().trim();
 
         if(email.isEmpty()){
             Toast.makeText(this,"Please insert your email",Toast.LENGTH_SHORT).show();
