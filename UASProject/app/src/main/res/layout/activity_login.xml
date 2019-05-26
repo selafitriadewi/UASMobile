@@ -22,7 +22,7 @@
         android:layout_centerHorizontal="true">
 
         <EditText
-            android:id="@+id/editEmail"
+            android:id="@+id/editEmailLogin"
             android:inputType="textEmailAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
             android:layout_margin="15dp"/>
 
         <EditText
-            android:id="@+id/editPassword"
+            android:id="@+id/editPasswordLogin"
             android:inputType="textPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -55,7 +55,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    public void registerUser() {
+    private void registerUser() {
         final String email = editTextEmail.getText().toString().trim();
         final String pass = editTextPassword.getText().toString().trim();
 
