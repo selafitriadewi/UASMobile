@@ -79,11 +79,12 @@ public class NewJobActivity extends AppCompatActivity {
     private void SaveTask() {
         String taskTittle = jobTitle.getText().toString().trim();
         String taskDesc = jobDesc.getText().toString().trim();
-        String taskStatus = "undone";
+        String taskStatus = "Belum Selesai";
 
         Task task = new Task(taskTittle,taskDesc,taskStatus);
 
         fDatabase.child(String.valueOf(maxId+1)).setValue(task);
+
         Toast.makeText(this,"tugas ditambahkan",Toast.LENGTH_SHORT).show();
         Intent main = new Intent(this, MainActivity.class);
         startActivity(main);

@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.o
     private RecyclerView.Adapter adapter;
     private DatabaseReference DatabaseReff;
     ArrayList<Task> ArrayTask;
-    Button delete = findViewById(R.id.buttonDelete);
 
 
     private FirebaseAuth fAuth;
@@ -56,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.o
                     Task t = datafromfirebase.getValue(Task.class);
                     ArrayTask.add(t);
                 }
-                adapter = new RecyclerAdapter(MainActivity.this,ArrayTask);
+                adapter = new RecyclerAdapter(MainActivity.this,ArrayTask,MainActivity.this);
                 recyclerView.setAdapter(adapter);
             }
 
@@ -65,21 +64,8 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.o
                 Toast.makeText(MainActivity.this,"Something Went Wrong,Please Try Again",Toast.LENGTH_SHORT).show();
             }
         });
-        delete.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                deleteData();
-            }
-        });
     }
-    private void deleteData() {
-        //fAuth.getUid();
-        //DatabaseReference delete = FirebaseDatabase.getInstance().getReference("task").child(fAuth.getCurrentUser().getUid());
-        DatabaseReference delete = FirebaseDatabase.getInstance().getReference().child("task").child(fAuth.getCurrentUser().getUid());
-        delete.removeValue();
-        Toast.makeText(MainActivity.this,"delete succesfull",Toast.LENGTH_SHORT).show();
 
-    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu_main,menu);
@@ -108,11 +94,6 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.o
         startActivity(new Intent(this, NewJobActivity.class));
     }
 
-    public void deleteJob(int idTask){
-        int idTaskDelete=idTask;
-
-    }
-
     private void logout() {
         fAuth.signOut();
         Intent login = new Intent(this, LoginActivity.class);
@@ -124,16 +105,13 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.o
         deleteTask(id);
     }
 
-    @Override
-    public void onUpdateStatus(int id) {
-        updateStatus(id);
-    }
-
-    private void updateStatus(int id) {
-
-    }
-
     private void deleteTask(int idTask){
+        int id = idTask;
 
+        DatabaseReff.child(String.valueOf(id)).removeValue();
+        Toast.makeText(this,"Data Berhasil Dihapus",Toast.LENGTH_SHORT);
+        Intent main = new Intent(this,MainActivity.class);
+        startActivity(main);
+        finish();
     }
 }

@@ -20,6 +20,7 @@ public class EditJobActivity extends AppCompatActivity {
 
     private EditText jobTitle;
     private EditText jobDesc;
+    private EditText jobStatus;
     private FirebaseAuth fAuth;
     private Button btnEditJob,btnCancel;
     private DatabaseReference fDatabase;
@@ -40,6 +41,7 @@ public class EditJobActivity extends AppCompatActivity {
         idTask = getIntent().getIntExtra("idTask",0) ;
         jobTitle = findViewById(R.id.editJobTitle);
         jobDesc = findViewById(R.id.editJobDesc);
+        jobStatus = findViewById(R.id.editJobStatus);
         btnEditJob = findViewById(R.id.buttonEditJob);
         btnCancel = findViewById(R.id.buttonCancel);
 
@@ -62,7 +64,7 @@ public class EditJobActivity extends AppCompatActivity {
     private void updateData(int idTask) {
         String taskTitle = jobTitle.getText().toString().trim();
         String taskDesc = jobDesc.getText().toString().trim();
-        String taskStatus = "undone";
+        String taskStatus = jobStatus.getText().toString().trim();
 
         Task taskUpdate = new Task(taskTitle,taskDesc,taskStatus);
 
