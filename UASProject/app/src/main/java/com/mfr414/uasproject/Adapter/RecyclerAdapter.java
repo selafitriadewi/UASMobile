@@ -35,6 +35,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         viewHolder.taskTitle.setText(tasks.get(i).getJobTitle());
         viewHolder.taskDesc.setText(tasks.get(i).getJobDesc());
         viewHolder.taskStatus.setText(tasks.get(i).getStatus());
+        viewHolder.btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     @Override
