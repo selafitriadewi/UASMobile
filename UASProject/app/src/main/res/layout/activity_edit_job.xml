@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="Cancel"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAddJob"
+        app:layout_constraintTop_toBottomOf="@+id/buttonEditJob"
         />
 
 </android.support.constraint.ConstraintLayout>

@@ -85,5 +85,7 @@ public class NewJobActivity extends AppCompatActivity {
 
         fDatabase.child(String.valueOf(maxId+1)).setValue(task);
         Toast.makeText(this,"tugas ditambahkan",Toast.LENGTH_SHORT).show();
+        Intent main = new Intent(this, MainActivity.class);
+        startActivity(main);
     }
 }
