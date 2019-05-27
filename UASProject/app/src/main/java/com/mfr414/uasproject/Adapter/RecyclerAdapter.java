@@ -1,14 +1,17 @@
 package com.mfr414.uasproject.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.mfr414.uasproject.Activity.EditJobActivity;
 import com.mfr414.uasproject.Model.Task;
 import com.mfr414.uasproject.R;
 
@@ -18,6 +21,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     Context context;
     ArrayList<Task> tasks;
+
+
     public RecyclerAdapter(Context c,ArrayList<Task> t) {
         context =  c;
         tasks = t;
@@ -32,13 +37,16 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+        final int idTask = i+1;
         viewHolder.taskTitle.setText(tasks.get(i).getJobTitle());
         viewHolder.taskDesc.setText(tasks.get(i).getJobDesc());
         viewHolder.taskStatus.setText(tasks.get(i).getStatus());
         viewHolder.btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent edit = new Intent(context, EditJobActivity.class);
+                edit.putExtra("idTask",idTask);
+                context.startActivity(edit);
             }
         });
     }
