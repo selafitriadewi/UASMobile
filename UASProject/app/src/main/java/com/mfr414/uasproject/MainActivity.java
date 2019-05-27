@@ -8,6 +8,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter adapter;
     private DatabaseReference DatabaseReff;
     ArrayList<Task> ArrayTask;
+    Button delete = findViewById(R.id.buttonDelete);
 
 
     private FirebaseAuth fAuth;
@@ -62,8 +65,21 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this,"Something Went Wrong,Please Try Again",Toast.LENGTH_SHORT).show();
             }
         });
+        delete.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                deleteData();
+            }
+        });
     }
+    private void deleteData() {
+        //fAuth.getUid();
+        //DatabaseReference delete = FirebaseDatabase.getInstance().getReference("task").child(fAuth.getCurrentUser().getUid());
+        DatabaseReference delete = FirebaseDatabase.getInstance().getReference().child("task").child(fAuth.getCurrentUser().getUid());
+        delete.removeValue();
+        Toast.makeText(MainActivity.this,"delete succesfull",Toast.LENGTH_SHORT).show();
 
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu_main,menu);
