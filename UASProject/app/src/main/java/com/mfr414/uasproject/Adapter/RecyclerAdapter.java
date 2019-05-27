@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.mfr414.uasproject.Model.Task;
@@ -43,11 +44,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView taskTitle,taskDesc,taskStatus;
+        Button btnEdit;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             taskTitle=itemView.findViewById(R.id.TVTitle);
             taskDesc=itemView.findViewById(R.id.TVDesc);
             taskStatus=itemView.findViewById(R.id.TVStatus);
-        }
+            btnEdit = itemView.findViewById(R.id.buttonEdit);
     }
 }
