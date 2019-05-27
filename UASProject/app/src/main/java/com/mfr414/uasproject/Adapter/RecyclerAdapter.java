@@ -21,6 +21,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     Context context;
     ArrayList<Task> tasks;
+    onDeleteTaskListener listener;
+
 
 
     public RecyclerAdapter(Context c,ArrayList<Task> t) {
@@ -49,6 +51,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                 context.startActivity(edit);
             }
         });
+
+        viewHolder.btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onDeleteTask(idTask);
+            }
+        });
     }
 
     @Override
@@ -58,13 +67,19 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView taskTitle,taskDesc,taskStatus;
-        Button btnEdit;
+        Button btnEdit,btnDelete;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             taskTitle = itemView.findViewById(R.id.TVTitle);
             taskDesc = itemView.findViewById(R.id.TVDesc);
             taskStatus = itemView.findViewById(R.id.TVStatus);
             btnEdit = itemView.findViewById(R.id.buttonEdit);
+            btnDelete = itemView.findViewById(R.id.buttonDelete);
         }
+    }
+
+    public  interface onDeleteTaskListener {
+        void onDeleteTask(int id);
+        void onUpdateStatus(int id);
     }
 }

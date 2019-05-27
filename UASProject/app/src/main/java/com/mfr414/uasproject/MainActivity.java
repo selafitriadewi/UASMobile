@@ -23,7 +23,7 @@ import com.mfr414.uasproject.Model.Task;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements RecyclerAdapter.onDeleteTaskListener {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private DatabaseReference DatabaseReff;
@@ -92,9 +92,32 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, NewJobActivity.class));
     }
 
+    public void deleteJob(int idTask){
+        int idTaskDelete=idTask;
+
+    }
+
     private void logout() {
         fAuth.signOut();
         Intent login = new Intent(this, LoginActivity.class);
         startActivity(login);
+    }
+
+    @Override
+    public void onDeleteTask(int id) {
+        deleteTask(id);
+    }
+
+    @Override
+    public void onUpdateStatus(int id) {
+        updateStatus(id);
+    }
+
+    private void updateStatus(int id) {
+
+    }
+
+    private void deleteTask(int idTask){
+
     }
 }
