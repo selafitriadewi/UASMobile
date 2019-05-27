@@ -3,6 +3,6 @@
     <gradient
         android:startColor="@color/tosca_500"
         android:endColor="@color/cyan_500"
-        android:angle="0"/>
+        android:angle="270"/>
 
 </shape>
