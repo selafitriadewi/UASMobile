@@ -47,9 +47,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         Button btnEdit;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            taskTitle=itemView.findViewById(R.id.TVTitle);
-            taskDesc=itemView.findViewById(R.id.TVDesc);
-            taskStatus=itemView.findViewById(R.id.TVStatus);
+            taskTitle = itemView.findViewById(R.id.TVTitle);
+            taskDesc = itemView.findViewById(R.id.TVDesc);
+            taskStatus = itemView.findViewById(R.id.TVStatus);
             btnEdit = itemView.findViewById(R.id.buttonEdit);
+        }
     }
 }
