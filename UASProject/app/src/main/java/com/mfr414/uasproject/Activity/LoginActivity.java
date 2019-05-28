@@ -1,6 +1,7 @@
 package com.mfr414.uasproject.Activity;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +32,12 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        RelativeLayout layout = findViewById(R.id.layout);
+        AnimationDrawable animation = (AnimationDrawable) layout.getBackground();
+        animation.setEnterFadeDuration(2000);
+        animation.setExitFadeDuration(4000);
+        animation.start();
 
         fAuth = FirebaseAuth.getInstance();
 

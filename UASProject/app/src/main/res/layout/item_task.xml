@@ -6,17 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
-    app:cardElevation="3dp">
+    app:cardElevation="3dp"
+    >
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        >
 
         <TextView
             android:id="@+id/TVTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Title"
+            android:fontFamily="sans-serif-medium"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -27,6 +30,7 @@
             android:layout_below="@+id/TVTitle"
             android:layout_marginTop="3dp"
             android:hint="Desc"
+            android:fontFamily="sans-serif-medium"
             android:textSize="15sp"
             android:textStyle="italic" />
 
@@ -40,24 +44,31 @@
             android:layout_alignRight="@+id/buttonEdit"
             android:hint="Status"
             android:textSize="15sp"
+            android:fontFamily="sans-serif-medium"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/buttonDelete"
-            android:layout_width="50dp"
-            android:layout_height="40dp"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
             android:layout_alignRight="@+id/TVTitle"
             android:text="Delete"
-            android:textSize="6sp"/>
+            android:textColor="@color/white_500"
+            android:fontFamily="sans-serif-medium"
+            android:background="@color/dark_blue_500"
+            android:textSize="10sp"/>
 
         <Button
             android:id="@+id/buttonEdit"
-            android:layout_width="50dp"
-            android:layout_height="40dp"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
             android:layout_alignLeft="@+id/buttonDelete"
-            android:layout_marginLeft="-53dp"
-            android:text="Edit"
-            android:textSize="6sp" />
+            android:layout_marginLeft="-70dp"
+            android:background="@color/dark_blue_500"
+            android:fontFamily="sans-serif-medium"
+            android:text="Edit Status"
+            android:textColor="@color/white_500"
+            android:textSize="10sp" />
 
     </RelativeLayout>
 

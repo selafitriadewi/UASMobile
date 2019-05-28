@@ -7,34 +7,16 @@
     tools:context=".Activity.EditJobActivity">
 
     <EditText
-        android:id="@+id/editJobTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="100dp"
-        android:hint="Enter A New Task Title"/>
-
-    <EditText
-        android:id="@+id/editJobDesc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editJobTitle"
-        android:layout_marginTop="25dp"
-        android:hint="Enter A New Task Description"/>
-
-    <EditText
         android:id="@+id/editJobStatus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="50dp"
+        android:layout_marginTop="112dp"
+        android:hint="Enter A New Task Status"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editJobDesc"
-        android:layout_marginTop="25dp"
-        android:hint="Enter A New Task Status"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonEditJob"

@@ -18,8 +18,6 @@ import com.mfr414.uasproject.R;
 
 public class EditJobActivity extends AppCompatActivity {
 
-    private EditText jobTitle;
-    private EditText jobDesc;
     private EditText jobStatus;
     private FirebaseAuth fAuth;
     private Button btnEditJob,btnCancel;
@@ -39,8 +37,6 @@ public class EditJobActivity extends AppCompatActivity {
         }
         fDatabase= FirebaseDatabase.getInstance().getReference().child("task").child(fAuth.getCurrentUser().getUid());
         idTask = getIntent().getIntExtra("idTask",0) ;
-        jobTitle = findViewById(R.id.editJobTitle);
-        jobDesc = findViewById(R.id.editJobDesc);
         jobStatus = findViewById(R.id.editJobStatus);
         btnEditJob = findViewById(R.id.buttonEditJob);
         btnCancel = findViewById(R.id.buttonCancel);
@@ -62,15 +58,11 @@ public class EditJobActivity extends AppCompatActivity {
     }
 
     private void updateData(int idTask) {
-        String taskTitle = jobTitle.getText().toString().trim();
-        String taskDesc = jobDesc.getText().toString().trim();
         String taskStatus = jobStatus.getText().toString().trim();
 
-        Task taskUpdate = new Task(taskTitle,taskDesc,taskStatus);
+        fDatabase.child(String.valueOf(idTask)).child("status").setValue(taskStatus);
 
-        fDatabase.child(String.valueOf(idTask)).setValue(taskUpdate);
-
-        Toast.makeText(this,"tugas dirubah",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Status Tugas Dirubah",Toast.LENGTH_SHORT).show();
         Intent main = new Intent(this, MainActivity.class);
         startActivity(main);
     }

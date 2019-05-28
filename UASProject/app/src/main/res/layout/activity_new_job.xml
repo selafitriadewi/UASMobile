@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/gradient1"
     tools:context=".Activity.NewJobActivity">
 
     <EditText
@@ -15,7 +16,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="100dp"
-        android:hint="Enter A New Task Title"/>
+        android:hint="Enter A New Task Title"
+        android:textColor="@color/white_500"
+        android:fontFamily="sans-serif-medium"
+        android:backgroundTint="@color/white_500"/>
 
     <EditText
         android:id="@+id/editJobDesc"
@@ -25,7 +29,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editJobTitle"
         android:layout_marginTop="25dp"
-        android:hint="Enter A New Task Description"/>
+        android:hint="Enter A New Task Description"
+        android:textColor="@color/white_500"
+        android:fontFamily="sans-serif-medium"
+        android:backgroundTint="@color/white_500"/>
 
     <Button
         android:id="@+id/buttonAddJob"
@@ -35,7 +42,10 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="25dp"
         app:layout_constraintTop_toBottomOf="@+id/editJobDesc"
-        android:text="Add Job"/>
+        android:text="Add Job"
+        android:fontFamily="sans-serif-medium"
+        android:background="@color/dark_blue_500"
+        android:textColor="@color/white_500"/>
 
     <Button
         android:id="@+id/buttonCancel"
@@ -44,5 +54,8 @@
         android:layout_marginTop="10dp"
         android:text="Cancel"
         app:layout_constraintTop_toBottomOf="@+id/buttonAddJob"
+        android:fontFamily="sans-serif-medium"
+        android:background="@color/dark_blue_500"
+        android:textColor="@color/white_500"
         />
 </android.support.constraint.ConstraintLayout>
