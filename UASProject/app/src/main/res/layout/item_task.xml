@@ -19,6 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Title"
+            android:textColor="@color/blue_500"
             android:fontFamily="sans-serif-medium"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -31,6 +32,7 @@
             android:layout_marginTop="3dp"
             android:hint="Desc"
             android:fontFamily="sans-serif-medium"
+            android:textColor="@color/blue_500"
             android:textSize="15sp"
             android:textStyle="italic" />
 
@@ -45,6 +47,7 @@
             android:hint="Status"
             android:textSize="15sp"
             android:fontFamily="sans-serif-medium"
+            android:textColor="@color/blue_500"
             android:textStyle="bold" />
 
         <Button

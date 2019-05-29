@@ -82,6 +82,7 @@ public class RegisterActivity extends AppCompatActivity {
                     fAuth.signOut();
                     Intent login = new Intent(RegisterActivity.this, LoginActivity.class);
                     startActivity(login);
+                    finish();
                 }else{
                     Toast.makeText(RegisterActivity.this,"Error While Processing Data, Please Try Again",Toast.LENGTH_SHORT).show();
                 }
